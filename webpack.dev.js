@@ -17,7 +17,7 @@ module.exports = {
   mode: 'development',
   devtool: 'cheap-module-source-map',
   output: {
-    path: resolve('docs'),
+    path: resolve('dist'),
     publicPath: '/',
     filename: '[name].bundle.js',
     chunkFilename: '[name].chunk.js',
@@ -48,7 +48,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebPackPlugin({
-      filename: resolve('docs/index.html'),
+      filename: resolve('dist/index.html'),
       template: resolve('src/template.html')
     }),
     new webpack.optimize.OccurrenceOrderPlugin(),
