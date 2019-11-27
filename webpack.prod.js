@@ -7,20 +7,18 @@ const resolve = relative_path => path.resolve(__dirname, relative_path);
 
 
 module.exports = {
-  entry: resolve('./src/main.js'),
+  entry: resolve('src/main.js'),
   target: 'web',
   resolve: {
     alias: {
-      '@src': resolve('./src')
+      '@src': resolve('src')
     }
-  },
-  output: {
-    path: resolve('./docs'),
-    publicPath: '/'
   },
   mode: 'production',
   devtool: 'nosources-source-map',
   output: {
+    path: resolve('docs'),
+    publicPath: '/',
     filename: '[hash].bundle.js',
     chunkFilename: '[chunkhash].chunk.js',
   },
@@ -67,8 +65,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebPackPlugin({
-      filename: resolve('./docs/index.html'),
-      template: resolve('./src/template.html')
+      filename: resolve('docs/index.html'),
+      template: resolve('src/template.html')
     }),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
