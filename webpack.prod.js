@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require('copy-webpack-plugin');
 
 
 const resolve = relative_path => path.resolve(__dirname, relative_path);
@@ -68,6 +69,9 @@ module.exports = {
       filename: resolve('docs/index.html'),
       template: resolve('src/template.html')
     }),
+    new CopyPlugin([
+      { from: 'public', to: 'public' },
+    ]),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
   ]

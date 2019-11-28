@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require('copy-webpack-plugin');
 
 
 const resolve = relative_path => path.resolve(__dirname, relative_path);
@@ -17,8 +18,8 @@ module.exports = {
   mode: 'development',
   devtool: 'cheap-module-source-map',
   output: {
-    path: resolve('dist'),
-    publicPath: '/',
+    path: resolve('dev'),
+    publicPath: '/TodoApp',
     filename: '[name].bundle.js',
     chunkFilename: '[name].chunk.js',
   },
@@ -48,9 +49,12 @@ module.exports = {
   },
   plugins: [
     new HtmlWebPackPlugin({
-      filename: resolve('dist/index.html'),
+      filename: resolve('dev/index.html'),
       template: resolve('src/template.html')
     }),
+    new CopyPlugin([
+      { from: 'public', to: 'public' },
+    ]),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
   ]
