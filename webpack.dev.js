@@ -28,7 +28,24 @@ module.exports = {
     chunkFilename: '[name].chunk.js',
   },
   optimization: {
-    runtimeChunk: 'single'
+    runtimeChunk: 'single',
+    splitChunks: {
+      minSize: 0,
+      maxInitialRequests: Infinity,
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: (module) => {
+            // get the name. E.g. node_modules/packageName/not/this/part.js
+            // or node_modules/packageName
+            const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
+            return `npm.${packageName}`;
+          },
+          chunks: 'all',
+          maxSize: 244000
+        }
+      }
+    }
   },
   module: {
     rules: [
