@@ -19,7 +19,7 @@ module.exports = {
   devtool: 'nosources-source-map',
   output: {
     path: resolve('docs'),
-    publicPath: '/TodoApp',
+    publicPath: '/TodoApp/',
     filename: '[hash].bundle.js',
     chunkFilename: '[chunkhash].chunk.js',
   },

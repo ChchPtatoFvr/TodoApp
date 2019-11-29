@@ -19,7 +19,7 @@ module.exports = {
   devtool: 'cheap-module-source-map',
   output: {
     path: resolve('dev'),
-    publicPath: '/TodoApp',
+    publicPath: '/TodoApp/',
     filename: '[name].bundle.js',
     chunkFilename: '[name].chunk.js',
   },
