@@ -8,7 +8,11 @@ const resolve = relative_path => path.resolve(__dirname, relative_path);
 
 
 module.exports = {
-  entry: resolve('src/main.js'),
+  entry: [
+    "core-js/modules/es.promise",
+    "core-js/modules/es.array.iterator",
+    resolve('src/main.js'),
+  ],
   target: 'web',
   resolve: {
     alias: {
