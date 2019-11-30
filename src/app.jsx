@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 
 function App()
 {
-  return (<div> Hello World! </div>);
+  return (<p style={{ color: "#fff" }}> Hello World! </p>);
 }
 
 export default function start()

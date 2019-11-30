@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{96:function(e,n,t){"use strict";t.r(n),t.d(n,"default",(function(){return a}));var o=t(89),r=t.n(o),c=t(92),l=t.n(c);function u(){return r.a.createElement("p",{style:{color:"#fff"}}," Hello World! ")}function a(){var e=document.getElementById("root");l.a.render(r.a.createElement(u,null),e)}}}]);
+//# sourceMappingURL=69b30db1a7546760baf1.chunk.js.map
